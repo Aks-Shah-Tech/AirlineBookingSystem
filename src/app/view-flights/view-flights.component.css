@@ -1,0 +1,98 @@
+.flights_card {
+    /* background-color: #F7F7F7; */
+    border-radius: 2px;
+    /* box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3); */
+    max-height: 320px;
+    overflow-y: scroll;
+    background: rgba( 255, 255, 255, 0 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 17.5px );
+-webkit-backdrop-filter: blur( 17.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.flights_card::-webkit-scrollbar {
+    width: 0.4em;
+  }
+   
+  .flights_card::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  .flights_card::-webkit-scrollbar-thumb {
+    background-color: rgb(27, 32, 42);
+    outline: 1px solid rgb(38, 34, 41);
+    border-radius: 10px;
+  }
+
+.flights_title {
+    text-shadow: 0 2px 2px rgba(40, 30, 30, 0.3);
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-top: 35px;
+}
+
+.del_icon {
+    color: rgb(231, 119, 119) !important;
+}
+
+.del_icon:hover {
+    color: red !important;
+}
+
+.del_flight_btn {
+    border: none;
+    background-color: transparent;
+}
+
+.source_div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.destination_div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search_div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.search_div button {
+  margin-left: 2px;
+  margin-right: 20px;
+  font-weight: 500;
+}
+
+.flights_container input[type=text] button {
+  height: 44px;
+  font-size: 16px;
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+  z-index: 1;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.flights_container .form-signup .form-control:focus {
+  border-color: rgb(104, 145, 162);
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+.search_input {
+  background: rgba( 255, 255, 255, 0 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 17.5px );
+-webkit-backdrop-filter: blur( 17.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}

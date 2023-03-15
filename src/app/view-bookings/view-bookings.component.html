@@ -1,0 +1,51 @@
+<h3 class="text-center my-5 flights_title">Your Bookings</h3>
+
+<div class="container">
+  <div class="card flights_card">
+    <div class="card-body">
+
+      <table class="table table-striped text-center">
+        <tr>
+          <th>Booking ID</th>
+          <th>User Id</th>
+          <th>Username</th>
+          <th>Flight Id</th>
+          <th>Flight Name</th>
+          <th>Contact No.</th>
+          <th>Departure Date</th>
+          <th>View Ticket</th>
+          <th>Cancel Booking</th>
+        </tr>
+        <tr *ngFor="let booking of bookings">
+          <td *ngIf="id == booking.userId">{{ booking.bookingId }}</td>
+          <td *ngIf="id == booking.userId">{{ booking.userId }}</td>
+          <td *ngIf="id == booking.userId">{{ booking.userName }}</td>
+          <td *ngIf="id == booking.userId">{{ booking.flightId }}</td>
+          <td *ngIf="id == booking.userId">{{ booking.flightName }}</td>
+          <td *ngIf="id == booking.userId">{{ booking.contactNo }}</td>
+          <td *ngIf="id == booking.userId">{{ booking.departureDate }}</td>
+          <td *ngIf="id == booking.userId">
+            <a routerLink="/ticket/{{booking.bookingId}}">
+              <button class="del_booking_btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ticket-perforated ticket_icon" viewBox="0 0 16 16">
+                  <path d="M4 4.85v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Zm-7 1.8v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Zm-7 1.8v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Zm-7 1.8v.9h1v-.9H4Zm7 0v.9h1v-.9h-1Z"/>
+                  <path d="M1.5 3A1.5 1.5 0 0 0 0 4.5V6a.5.5 0 0 0 .5.5 1.5 1.5 0 1 1 0 3 .5.5 0 0 0-.5.5v1.5A1.5 1.5 0 0 0 1.5 13h13a1.5 1.5 0 0 0 1.5-1.5V10a.5.5 0 0 0-.5-.5 1.5 1.5 0 0 1 0-3A.5.5 0 0 0 16 6V4.5A1.5 1.5 0 0 0 14.5 3h-13ZM1 4.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v1.05a2.5 2.5 0 0 0 0 4.9v1.05a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-1.05a2.5 2.5 0 0 0 0-4.9V4.5Z"/>
+                </svg>
+              </button>
+            </a>
+          </td>
+          <td *ngIf="id == booking.userId">
+            <button class="del_booking_btn" (click)="deleteBooking(booking.bookingId)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                class="bi bi-x-octagon-fill del_icon" viewBox="0 0 16 16">
+                <path
+                  d="M11.46.146A.5.5 0 0 0 11.107 0H4.893a.5.5 0 0 0-.353.146L.146 4.54A.5.5 0 0 0 0 4.893v6.214a.5.5 0 0 0 .146.353l4.394 4.394a.5.5 0 0 0 .353.146h6.214a.5.5 0 0 0 .353-.146l4.394-4.394a.5.5 0 0 0 .146-.353V4.893a.5.5 0 0 0-.146-.353L11.46.146zm-6.106 4.5L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z" />
+              </svg>
+            </button>
+          </td>
+        </tr>
+      </table>
+
+    </div>
+  </div>
+</div>

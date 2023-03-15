@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Airline'`, () => {
+  it(`should have as title 'restaurant_booking_angular_app'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Airline');
+    expect(app.title).toEqual('restaurant_booking_angular_app');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('Airline app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('restaurant_booking_angular_app app is running!');
   });
 });

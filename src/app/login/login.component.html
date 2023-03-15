@@ -1,0 +1,13 @@
+<section class="login_section">
+<div class="login-card"><img class="profile-img-card" src="assets/img/airplane.png" />
+  <p class="profile-name-card"></p>
+  <form class="form-signin"><span class="reauth-email"></span>
+    <input #Email type="email" class="form-control" id="inputEmail" required placeholder="Email address" autofocus />
+    <input #PWD type="password" class="form-control" id="inputPassword" required placeholder="Password" />
+    <i class="bi bi-eye-slash" 
+                    id="togglePassword"></i>
+    <button class="btn btn-primary btn-block btn-lg btn-signin" (click)="Login(Email.value,PWD.value)">Sign in</button>
+  </form>
+  <a class="forgot-password" routerLink="/signup">New User ?</a>
+</div>
+</section>

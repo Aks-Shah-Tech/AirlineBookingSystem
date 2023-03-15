@@ -1,0 +1,44 @@
+<div class="flight-card"><img class="profile-img-card" src="assets/img/app.png" />
+    <p class="profile-name-card"></p>
+    <form [formGroup]="form" (ngSubmit)="submit()" class="form-signup"><span class="reauth-email"></span>
+        <div class="row">
+            <div class="col-md-12 form-group">
+                <input #Email formControlName="flightName" type="text" class="form-control" id="flightName" required placeholder="Flight Name" autofocus />
+                <div *ngIf="f['flightName'].touched && f['flightName'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['flightName'].errors && f['flightName'].errors['required']">Flight name is required.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="source" type="text" class="form-control" id="source" required placeholder="Source" autofocus />
+                <div *ngIf="f['source'].touched && f['source'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['source'].errors && f['source'].errors['required']">Source is required.</div>
+                </div>
+            </div>
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="destination" type="text" class="form-control" id="destination" required placeholder="Destination" autofocus />
+                <div *ngIf="f['destination'].touched && f['destination'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['destination'].errors && f['destination'].errors['required']">Destination is required.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="departuredate" type="datetime-local" class="form-control" id="departuredate" required placeholder="Departure Date" autofocus />
+                <div *ngIf="f['departuredate'].touched && f['departuredate'].invalid" class="alert alert-danger my-2">
+                    <div *ngIf="f['departuredate'].errors && f['departuredate'].errors['required']">Departure Date is required.</div>
+                </div>
+            </div>
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="charges" type="number" class="form-control" id="charges" required placeholder="Charges" autofocus />
+                <div *ngIf="f['charges'].touched && f['charges'].invalid" class="alert alert-danger my-2">
+                    <div *ngIf="f['charges'].errors && f['charges'].errors['required']">Charges are required.</div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-block btn-lg btn-signup" type="submit">Register</button>
+        </form>

@@ -1,0 +1,28 @@
+<nav class="navbar navbar-dark navbar-expand-md bg-dark pr-3 pl-3">
+    <div class="container-fluid">
+        <a class="navbar-brand navbar_title" routerLink="" *ngIf="!IsLoggedIn">FLYWITHME</a>
+        <a class="navbar-brand navbar_title" routerLink="/customerDashboard" *ngIf="IsCustomer">FLYWITHME</a>
+        <a class="navbar-brand navbar_title" routerLink="/adminDashboard" *ngIf="IsAdmin">FLYWITHME</a>
+        <img src="../../assets/img/logo.png" alt="logo" class="my-2 profile-img-card">
+        <button data-toggle="collapse" data-target="#navcol-1" class="navbar-toggler">
+            <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="nav navbar-nav ml-auto">
+                <li [hidden]="IsLoggedIn" class="nav-item"><a class="nav-link active navbar_login" routerLink="/login">Login</a></li>
+
+                <li [hidden]="IsLoggedIn" class="nav-item"><a class="nav-link active navbar_signup" routerLink="/signup">Signup</a></li>
+
+                <li [hidden]="!IsLoggedIn" class="nav-item"><a class="nav-link active navbar_user">Welcome! {{name}}</a></li>
+                
+                <li [hidden]="!IsLoggedIn" class="nav-item"><a class="nav-link active navbar_login" routerLink="/viewProfile/{{id}}">View Profile</a></li>
+                
+                <li [hidden]="!IsLoggedIn" class="nav-item" *ngIf="IsCustomer"><a class="nav-link active navbar_login" routerLink="/customerDashboard">Home</a></li>
+                
+                <li [hidden]="!IsLoggedIn" class="nav-item" *ngIf="IsAdmin"><a class="nav-link active navbar_login" routerLink="/adminDashboard">Home</a></li>
+
+                <li [hidden]="!IsLoggedIn" class="nav-item"><a class="nav-link active navbar_logout" (click)="Logout()">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

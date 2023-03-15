@@ -1,0 +1,52 @@
+<div class="register-card"><img class="profile-img-card" src="assets/img/bookings.png" />
+    <p class="profile-name-card"></p>
+    <form [formGroup]="form" (ngSubmit)="submit()"  class="form-signup"><span class="reauth-email"></span>
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="userId" type="number" class="form-control input_userid" id="userId" required placeholder="UserId" />
+                <div *ngIf="f['userId'].touched && f['userId'].invalid" class="alert alert-danger my-2">
+                    <div *ngIf="f['userId'].errors && f['userId'].errors['required']">UserId is required.</div>
+                </div>
+            </div>
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="userName" type="text" class="form-control" id="userName" required placeholder="Username" />
+                <div *ngIf="f['userName'].touched && f['userName'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['userName'].errors && f['userName'].errors['required']">Username is required.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="flightId" type="number" class="form-control input_userid" id="flightId" required placeholder="FlightId" />
+                <div *ngIf="f['flightId'].touched && f['flightId'].invalid" class="alert alert-danger my-2">
+                    <div *ngIf="f['flightId'].errors && f['flightId'].errors['required']">FlightId is required.</div>
+                </div>
+            </div>
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="flightName" type="text" class="form-control" id="flightName" required placeholder="Flight Name" />
+                <div *ngIf="f['flightName'].touched && f['flightName'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['flightName'].errors && f['flightName'].errors['required']">Flightname is required.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="contactNo" type="text" class="form-control" id="contactNo" required placeholder="Contact No." />
+                <div *ngIf="f['contactNo'].touched && f['contactNo'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['contactNo'].errors && f['contactNo'].errors['required']">Contact No. is required.</div>
+                    <div *ngIf="f['contactNo'].errors && f['contactNo'].errors['minlength']">Contact No. should be of 10 digits.</div>
+                    <div *ngIf="f['contactNo'].errors && f['contactNo'].errors['maxlength']">Contact No.   should be of 10 digits.</div>
+                </div>
+            </div>
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="departureDate" type="datetime-local" class="form-control input_userid" id="departureDate" required placeholder="Departure Date" />
+                <div *ngIf="f['departureDate'].touched && f['departureDate'].invalid" class="alert alert-danger my-2">
+                    <div *ngIf="f['departureDate'].errors && f['departureDate'].errors['required']">Departure date is required.</div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-block btn-lg btn-signup" type="submit"  >Book</button>
+        </form>

@@ -1,0 +1,55 @@
+<h3 class="text-center mb-4 flights_title">Registered Flights</h3>
+
+<div class="container">
+    <form [formGroup]="form" (ngSubmit)="submit()"  class="form-signup">
+    <div class="row flights_container mb-3">
+        <div class="col-md-4 source_div">
+            <input type="text" class="pr-3" formControlName="source" class="form-control search_input" placeholder="Enter Source">
+        </div>
+        <div class="col-md-4 destination_div">
+            <input type="text" formControlName="destination" class="form-control search_input" placeholder="Enter Destination"> 
+        </div>
+        <div class="col-md-4 search_div">
+            <button class="btn btn-primary shadow" type="submit">Search</button>
+            <form [formGroup]="form" (ngSubmit)="reset()">
+            <button class="btn btn-danger shadow" type="submit">Reset</button>
+            </form>
+        </div>
+    </div>
+    </form>
+    
+    <div class="card flights_card">
+        <div class="card-body">
+            
+        
+    <table class="table table-striped text-center">
+        <tr>
+            <th>FlightId</th>
+            <th>FlightName</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Departure Date</th>
+            <th>Charges</th>
+            <th *ngIf="IsAdmin">Delete</th>
+        </tr>
+        <tr *ngFor="let flight of flights">
+            <td>{{flight.flightId}}</td>
+            <td>{{flight.flightName}}</td>
+            <td>{{flight.source}}</td>
+            <td>{{flight.destination}}</td>
+            <td>{{flight.departuredate}}</td>
+            <td>{{flight.charges}}/-</td>
+            <td *ngIf="IsAdmin">
+                <button class="del_flight_btn" (click)="deleteFlight(flight.flightId)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash del_icon" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                </svg>
+                </button>
+            </td>
+        </tr>
+    </table>
+
+</div>
+</div>
+</div>

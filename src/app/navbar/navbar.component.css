@@ -1,0 +1,40 @@
+.navbar_title {
+    text-shadow: 0 2px 2px rgba(245, 242, 242, 0.3);
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 25px;
+}
+
+.profile-img-card {
+    width: 36px;
+    height: 36px;
+    margin: 0 auto 10px;
+    display: block;
+  }
+
+.navbar_login, .navbar_signup {
+    cursor: pointer;
+    font-weight: 500;
+    transition-delay: 0.1s;
+}
+
+.navbar_user {
+    font-weight: 500;
+    border-radius: 5px;
+    margin-right: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.navbar_login:hover, .navbar_signup:hover {
+    border-bottom: 1px solid white;
+}
+
+.navbar_logout {
+    cursor: pointer;
+    font-weight: 500;
+    color: rgb(231, 119, 119) !important;
+}
+
+.navbar_logout:hover {
+    color: red !important;
+}

@@ -1,0 +1,60 @@
+<div class="register-card"><img class="profile-img-card" src="assets/img/aeroplane.png" />
+    <p class="profile-name-card"></p>
+    <form [formGroup]="form" (ngSubmit)="submit()"  class="form-signup"><span class="reauth-email"></span>
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="username" type="text" class="form-control" id="username" required placeholder="Username" autofocus />
+                <div *ngIf="f['username'].touched && f['username'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['username'].errors && f['username'].errors['required']">Username is required.</div>
+                    <div *ngIf="f['username'].errors && f['username'].errors['minlength']">Name must be at least 4 characters long.</div>
+                    <div *ngIf="f['username'].errors && f['username'].errors['maxlength']">Max length of username is 20.</div>
+                </div>
+            </div>
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="email" type="email" class="form-control" id="inputEmail" required placeholder="Email address" autofocus />
+                <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['email'].errors && f['email'].errors['required']">Email is required.</div>
+                    <div *ngIf="f['email'].errors && f['email'].errors['email']">Please enter a valid email address.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="age" type="number" class="form-control" id="age" required placeholder="Age" autofocus />
+                <div *ngIf="f['age'].touched && f['age'].invalid" class="alert alert-danger my-3">
+                    <div *ngIf="f['age'].errors && f['age'].errors['required']">Age is required.</div>
+                    <div *ngIf="f['age'].errors && f['age'].errors['min']">Minimum age is 10.</div>
+                    <div *ngIf="f['age'].errors && f['age'].errors['max']">Maximum age is 70.</div>
+                </div>
+            </div>
+            <div class="col-md-6 form-group">
+                <input #Email formControlName="userType" type="text" class="form-control" id="userType" required placeholder="UserType (Admin/Customer)" autofocus />
+                <div *ngIf="f['userType'].touched && f['userType'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['userType'].errors && f['userType'].errors['required']">UserType is required.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="row">
+            <div class="col-md-6 form-group">
+                <input #PWD formControlName="password" type="password" class="form-control" id="inputPassword" required placeholder="Password" />
+                <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['password'].errors && f['password'].errors['required']">Password is required.</div>
+                    <div *ngIf="f['password'].errors && f['password'].errors['minlength']">Password minlength should be 5.</div>
+                    <div *ngIf="f['password'].errors && f['password'].errors['maxlength']">Password maximum length should be 20.</div>
+                </div>
+            </div>
+            <div class="col-md-6 form-group">
+                <input #PWD formControlName="confirmPassword" type="password" class="form-control" id="inputPassword" required placeholder="Confirm Password" />
+                <div *ngIf="f['confirmPassword'].touched && f['confirmPassword'].invalid" class="alert alert-danger">
+                    <div *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['required']">Confirm Password is required.</div>
+                    <div *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['minlength']">Confirm Password minlength should be 5.</div>
+                    <div *ngIf="f['confirmPassword'].errors && f['confirmPassword'].errors['maxlength']">Confirm Password maximum length should be 20.</div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-block btn-lg btn-signup" type="submit" [disabled]="!form.valid" >Sign Up</button>
+        </form>
+            <a class="forgot-password" routerLink="/login">Already a User ?</a></div>

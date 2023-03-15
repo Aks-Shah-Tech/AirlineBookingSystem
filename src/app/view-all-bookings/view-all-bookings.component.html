@@ -1,0 +1,31 @@
+<h3 class="text-center my-5 flights_title">All Bookings</h3>
+
+<div class="container">
+    <div class="card flights_card">
+        <div class="card-body">
+            
+        
+    <table class="table table-striped text-center">
+        <tr>
+            <th>Booking ID</th>
+                <th>User Id</th>
+                <th>Username</th>
+                <th>Flight Id</th>
+                <th>Flight Name</th>
+                <th>Contact No.</th>
+                <th>Departure Date</th>
+        </tr>
+        <tr *ngFor="let booking of bookings">
+            <td>{{ booking.bookingId }}</td>
+            <td>{{ booking.userId }}</td>
+            <td>{{ booking.userName }}</td>
+            <td>{{ booking.flightId }}</td>
+            <td>{{ booking.flightName }}</td>
+            <td>{{ booking.contactNo }}</td>
+            <td>{{ booking.departureDate }}</td>
+        </tr>
+    </table>
+
+</div>
+</div>
+</div>
